@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubra os melhores cachorros-quentes de Osasco, veja horários, notas, fotos e avaliações.">
+  <title>Osasco Hot Dog | Os melhores cachorros-quentes da cidade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header" id="inicio">
+    <div class="top-strip"><div class="container">🌭 O sabor de Osasco começa aqui!</div></div>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Osasco Hot Dog - início">
+        <span class="brand-icon">🌭</span>
+        <span><strong>OSASCO</strong> HOT DOG<small>Os melhores da cidade!</small></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+      <nav class="menu" id="menu">
+        <a href="#inicio">Início</a>
+        <a href="#ranking">Melhores</a>
+        <a href="#horarios">Horários</a>
+        <a href="#avaliacoes">Comentários</a>
+        <button class="btn btn-yellow btn-small" id="openCommentTop">＋ Poste seu comentário</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">📍 OSASCO - SP</span>
+          <h1>OS MELHORES<br><span>CACHORROS QUENTES</span><br>DE OSASCO!</h1>
+          <p>Encontre lugares, horários, fotos e avaliações para escolher seu próximo hot dog.</p>
+          <div class="hero-actions">
+            <a href="#ranking" class="btn btn-yellow">🔎 Ver os melhores</a>
+            <button class="btn btn-outline" id="openCommentHero">💬 Avaliar um lugar</button>
+          </div>
+        </div>
+        <div class="hero-product" aria-hidden="true">
+          <div class="hero-product-glow"></div>
+          <img src="imagens/hero-osaco-hot-dog.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container benefits-grid">
+        <div><span>⭐</span><strong>Melhores dogs</strong><small>Ranking da cidade</small></div>
+        <div><span>🕐</span><strong>Horários</strong><small>Saiba quando ir</small></div>
+        <div><span>💬</span><strong>Avaliações</strong><small>Opinião de clientes</small></div>
+        <div><span>📍</span><strong>Osasco</strong><small>Encontre perto de você</small></div>
+      </div>
+    </section>
+
+    <section class="section" id="ranking">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow yellow">🏆 DESTAQUES DA CIDADE</span>
+            <h2>Ranking dos <span>melhores</span></h2>
+            <p>Escolha pelo bairro, nota ou nome e encontre seu próximo favorito.</p>
+          </div>
+        </div>
+
+        <div class="filters" aria-label="Filtros do ranking">
+          <label>
+            <span>Buscar</span>
+            <input type="search" id="searchInput" placeholder="Ex.: Dog do Chef">
+          </label>
+          <label>
+            <span>Bairro</span>
+            <select id="neighborhoodFilter">
+              <option value="todos">Todos os bairros</option>
+            </select>
+          </label>
+          <label>
+            <span>Ordenar</span>
+            <select id="sortFilter">
+              <option value="rating">Maior nota</option>
+              <option value="reviews">Mais avaliações</option>
+              <option value="priceLow">Menor preço</option>
+              <option value="priceHigh">Maior preço</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="cards" id="dogCards"></div>
+        <p class="empty-state hidden" id="emptyState">Nenhum cachorro-quente encontrado com esses filtros.</p>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="horarios">
+      <div class="container split">
+        <div>
+          <span class="eyebrow yellow">🕐 HORÁRIOS</span>
+          <h2>Programe seu <span>rolê</span></h2>
+          <p class="section-text">Consulte os horários cadastrados de cada estabelecimento e evite viagem perdida.</p>
+        </div>
+        <div class="schedule-box">
+          <h3>Como funciona?</h3>
+          <ul>
+            <li><span>1</span> Escolha um cachorro-quente no ranking.</li>
+            <li><span>2</span> Confira bairro, preço e horário.</li>
+            <li><span>3</span> Veja as avaliações de outros clientes.</li>
+            <li><span>4</span> Vá comer e depois deixe sua nota!</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews-section" id="avaliacoes">
+      <div class="container">
+        <div class="section-heading centered">
+          <span class="eyebrow yellow">💬 COMENTÁRIOS</span>
+          <h2>O que os clientes <span>estão falando</span></h2>
+          <p>Ajude outras pessoas de Osasco a encontrarem um dog delicioso.</p>
+        </div>
+
+        <div class="reviews-grid" id="reviewsList"></div>
+        <div class="center">
+          <button class="btn btn-yellow" id="openCommentBottom">💬 Poste seu comentário</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <span class="eyebrow">🌭 OSASCO TEM SABOR!</span>
+          <h2>Qual é o seu favorito?</h2>
+          <p>Participe e ajude a deixar o ranking cada vez melhor.</p>
+        </div>
+        <button class="btn btn-dark" id="openCommentCta">＋ Avaliar agora</button>
+      </div>
+    </section>
+  </main>
+
+
+    <div class="modal-card">
+      <button class="modal-close" id="closeAuth" aria-label="Fechar">×</button>
+      <span class="eyebrow yellow">🔐 CONTA</span>
+      <h2 id="authTitle">Entrar no Osasco Hot Dog</h2>
+      <p id="authSubtitle">Entre para publicar comentários, notas e fotos.</p>
+      <form id="authForm">
+        <label>E-mail
+          <input type="email" id="authEmailInput" required placeholder="voce@email.com">
+        </label>
+        <label>Senha
+          <input type="password" id="authPasswordInput" required minlength="6" placeholder="Mínimo de 6 caracteres">
+        </label>
+        <label id="authNameWrap">Nome
+          <input type="text" id="authNameInput" maxlength="60" placeholder="Seu nome">
+        </label>
+        <button class="btn btn-yellow full" type="submit" id="authSubmit">Criar conta</button>
+      </form>
+      <button class="auth-switch" id="authSwitch">Já tenho uma conta — entrar</button>
+      <small class="form-note">A autenticação é feita pelo Supabase. Não coloque sua chave secreta/service role no navegador.</small>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="brand footer-brand">
+        <span class="brand-icon">🌭</span>
+        <span><strong>OSASCO</strong> HOT DOG<small>Os melhores da cidade!</small></span>
+      </div>
+      <div class="footer-links">
+        <a href="#inicio">Início</a>
+        <a href="#ranking">Melhores</a>
+        <a href="#horarios">Horários</a>
+        <a href="#avaliacoes">Comentários</a>
+      </div>
+      <div class="social">📷 Instagram &nbsp; ● &nbsp; Facebook &nbsp; ● &nbsp; WhatsApp</div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Osasco Hot Dog. Projeto demonstrativo.</div>
+  </footer>
+
+  <div class="modal hidden" id="commentModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" id="closeModalBackdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="closeModal" aria-label="Fechar">×</button>
+      <span class="eyebrow yellow">⭐ SUA OPINIÃO</span>
+      <h2 id="modalTitle">Avalie um cachorro-quente</h2>
+      <p>Deixe sua opinião, dê uma nota e, se quiser, envie uma foto.</p>
+
+      <form id="reviewForm">
+        <label>Seu nome
+          <input type="text" id="reviewName" maxlength="40" required placeholder="Digite seu nome">
+        </label>
+
+        <label>Estabelecimento
+          <select id="reviewDog" required></select>
+        </label>
+
+        <fieldset class="rating-input">
+          <legend>Sua nota</legend>
+          <div id="starPicker" class="star-picker" aria-label="Selecione uma nota de 1 a 5">
+            <button type="button" data-rating="1">★</button>
+            <button type="button" data-rating="2">★</button>
+            <button type="button" data-rating="3">★</button>
+            <button type="button" data-rating="4">★</button>
+            <button type="button" data-rating="5">★</button>
+          </div>
+          <input type="hidden" id="reviewRating" value="5">
+        </fieldset>
+
+        <label>Seu comentário
+          <textarea id="reviewText" rows="4" maxlength="300" required placeholder="Conte como foi sua experiência..."></textarea>
+        </label>
+        <label>Foto do seu cachorro-quente (opcional)
+          <input type="file" id="reviewPhoto" accept="image/jpeg,image/png,image/webp" />
+        </label>
+        <small class="form-note">Máximo recomendado: 5 MB.</small>
+
+        <button class="btn btn-yellow full" type="submit">Publicar comentário</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
